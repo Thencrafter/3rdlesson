@@ -1,0 +1,21 @@
+.navbar{
+  grid-area: navbar;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo{
+  width: 100px;
+}
+
+.menuItem{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  transition: 0.5s;
+}
+
+.menuItem:hover{
+  transform: scale(1.2);
+}

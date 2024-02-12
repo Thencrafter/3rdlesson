@@ -1,0 +1,43 @@
+.profile{
+  grid-area: profile;
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+}
+
+.mainPfp{
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.userName{
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.posts{
+  padding: 20px;
+
+}
+
+.post{
+  display: flex;
+  flex-direction: row;
+}
+
+.postText{
+  display: block;
+}
+
+.postPfp{
+  width: 70px;
+  padding: 10px;
+}
+
+.postUserName{
+  font-weight: bold;
+  font-size: 20px;
+}
