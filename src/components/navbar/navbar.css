@@ -2,6 +2,7 @@
   grid-area: navbar;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .logo{
@@ -10,10 +11,11 @@
 
 .menuItem{
   margin-top: 20px;
-  margin-left: 20px;
   margin-bottom: 10px;
   font-size: 30px;
   transition: 0.5s;
+  color: #b5bac1;
+  text-decoration: none;
 }
 
 .menuItem:hover{
