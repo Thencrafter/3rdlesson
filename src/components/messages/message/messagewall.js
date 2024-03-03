@@ -1,20 +1,26 @@
 import React from 'react'
 import Pfp from '../../../img/pfp.png'
 import Message from './message.js'
+let messages = [
+		{message: "Hello!", name: "Alex", id: 1},
+		{message: "Hello!", name: "Dmitriy", id: 2},
+		{message: "Nice to meet you!", name: "Alex", id: 3},
+		{message: "Nice to meet you too!", name: "Dmitriy", id: 4},
+		{message: "My name is Alex! What's yours?", name: "Alex", id: 5},
+		{message: "Dmitriy", name: "Dmitriy", id: 6}
+	]
 
-function Messages(){
+
+function Messagewall(){
 	return(
 		<div className = "messagewall">
-			<Message message = "Hello!" name = "Alex"/>
-			<Message message = "Hello!" name = "Dmitriy"/>
-			<Message message = "Nice to meet you!" name = "Alex"/>
-			<Message message = "Nice to meet you too!" name = "Dmitriy"/>
-			<Message message = "My name is Alex! What's yours?" name = "Alex"/>
-			<Message message = "Dmitriy" name = "Dmitriy"/>
+			{messages.map((e)=>
+				<Message message = {e.message} name = {e.name} id = {e.id}/>
+			)}
 			<input></input>
 			<button>Message</button>
 		</div>
 	)
 }
 
-export default Messages
+export default Messagewall
