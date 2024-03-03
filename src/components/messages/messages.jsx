@@ -1,15 +1,17 @@
 import React from 'react'
 import './messages.css'
 import Messagewall from './message/messagewall'
+import {NavLink} from 'react-router-dom'
+import Dialogitem from './dialogitem'
 
-function Messages() {
+function Messages(props) {
 	return(
 		<div className = "messages">
 			<div className = "contacts">
 				<ul className = "personList">
-					<a className = "contact">Dmitriy Kozhuhov</a>
-					<a className = "contact">Tim Holmaskiy</a>
-					<a className = "contact">Joshua Coppola</a>
+					<Dialogitem name = {"Dmitriy Kozhuhov"} id = {"1"}/>
+					<Dialogitem name = {"Tim Holmaskiy"} id = {"2"}/>
+					<Dialogitem name = {"Joshua Coppola"} id = {"3"}/>
 				</ul>
 			</div>
 			<div className = "message">
