@@ -11,10 +11,10 @@ let messages = [
 	]
 
 
-function Messagewall(){
+function Messagewall(props){
 	return(
 		<div className = "messagewall">
-			{messages.map((e)=>
+			{props.messages.map((e)=>
 				<Message message = {e.message} name = {e.name} id = {e.id}/>
 			)}
 			<input></input>

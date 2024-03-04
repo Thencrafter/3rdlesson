@@ -10,7 +10,7 @@ function Profile(props) {
 				<img src = {Pfp} className = "mainPfp"></img>
 				<p className = "userName">{props.name}</p>
 			</div>
-			<Posts/>
+			<Posts posts = {props.posts}/>
 		</div>
 	)
 }
