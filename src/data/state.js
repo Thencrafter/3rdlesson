@@ -1,3 +1,5 @@
+let idNum = 5
+
 let state = {
     messagePage: {
         messages: [
@@ -24,6 +26,16 @@ let state = {
             {message: "What's yours?", id: 4}
         ]
     } 
+}
+
+export let newPost = (postText) =>{
+    let addPost = {
+        message: postText,
+        id: idNum
+    }
+    state.profilePage.posts.push(addPost)
+    idNum = idNum + 1
+    console.log(state)
 }
 
 export default state

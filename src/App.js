@@ -14,7 +14,7 @@ function App(props) {
       <Navbar/>
       <Switch>
         <Route path = "/profile" render = {() =>
-          <Profile posts = {props.state.profilePage}/>
+          <Profile posts = {props.state.profilePage} newPost = {props.newPost}/>
         }/>
         <Route exact path = '/messages' render = {() =>
           <Messages messages = {props.state.messagePage} dialogNames = {props.state.messagePage}/>
