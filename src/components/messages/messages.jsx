@@ -10,13 +10,13 @@ function Messages(props) {
 		<div className = "messages">
 			<div className = "contacts">
 				<ul className = "personList">
-					{props.dialogNames.map((e)=>
+					{props.messages.dialogNames.map((e)=>
 						<Dialogitem name = {e.name} id = {e.id}/>
 					)}
 				</ul>
 			</div>
 			<div className = "message">
-				<Messagewall messages = {props.messages}/>
+				<Messagewall messages = {props.messages.messages}/>
 			</div>
 		</div>
 	)

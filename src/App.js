@@ -14,10 +14,10 @@ function App(props) {
       <Navbar/>
       <Switch>
         <Route path = "/profile" render = {() =>
-          <Profile posts = {props.posts}/>
+          <Profile posts = {props.state.profilePage}/>
         }/>
         <Route exact path = '/messages' render = {() =>
-          <Messages messages = {props.messages} dialogNames = {props.dialogNames}/>
+          <Messages messages = {props.state.messagePage} dialogNames = {props.state.messagePage}/>
         }/>
       </Switch>
     </BrowserRouter>
