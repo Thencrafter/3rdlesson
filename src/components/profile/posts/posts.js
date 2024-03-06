@@ -7,7 +7,11 @@ let postText = React.createRef()
 
 function Posts(props){
 	function newPost() {
-		props.newPost(postText.current.value)
+		if (postText.current.value != "") {
+			props.newPost(postText.current.value)
+			postText.current.value = ""
+		}
+		
 	}
 	return(
 		<div className = "posts">

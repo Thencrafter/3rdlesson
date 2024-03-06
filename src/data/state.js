@@ -1,3 +1,5 @@
+import {run} from '../render.js'
+
 let idNum = 5
 
 let state = {
@@ -33,9 +35,9 @@ export let newPost = (postText) =>{
         message: postText,
         id: idNum
     }
-    state.profilePage.posts.push(addPost)
+    state.profilePage.posts.unshift(addPost)
     idNum = idNum + 1
-    console.log(state)
+    run(state)
 }
 
 export default state
