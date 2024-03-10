@@ -1,8 +1,9 @@
-import {run} from '../render.js'
 import Flower from '../img/flower.jpg'
 import Png from '../img/png.png'
 import Tangerine from '../img/tan.png'
-console.log(Flower)
+function run(){
+    console.log('It is fake function');
+}
 
 let idNum = 5
 
@@ -58,6 +59,10 @@ export let newPost = (postText) =>{
 export let changePost = (text) =>{
     state.profilePage.newPostText = text
     run(state)
+}
+
+export let subscribe = (observer) =>{
+    run = observer
 }
 
 export default state
