@@ -1,4 +1,8 @@
 import {run} from '../render.js'
+import Flower from '../img/flower.jpg'
+import Png from '../img/png.png'
+import Tangerine from '../img/tan.png'
+console.log(Flower)
 
 let idNum = 5
 
@@ -20,13 +24,23 @@ let state = {
         ]
     },
     
+    navBar: {
+        friends: [
+            {name: "Tim", pfp: "../img/flower.jpg", id: 1},
+            {name: "Dmitriy", pfp: {Png}, id: 2},
+            {name: "Joshua", pfp: {Tangerine}, id: 3}
+        ]
+    },
+
     profilePage: {
         posts: [
             {message: "Hello!", id: 1},
             {message: "Nice to meet you!", id: 2},
             {message: "My name is Alex!", id: 3},
             {message: "What's yours?", id: 4}
-        ]
+        ],
+
+        newPostText: "jkh"
     } 
 }
 
@@ -36,7 +50,13 @@ export let newPost = (postText) =>{
         id: idNum
     }
     state.profilePage.posts.unshift(addPost)
+    state.profilePage.newPostText = ""
     idNum = idNum + 1
+    run(state)
+}
+
+export let changePost = (text) =>{
+    state.profilePage.newPostText = text
     run(state)
 }
 

@@ -3,16 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from './data/state.js'
 import {newPost} from './data/state.js'
+import {changePost} from './data/state.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-export function run(){
+export function run(state){
   root.render(
     <React.StrictMode>
       <App 
         state = {state}
         newPost = {newPost}
+        changePost = {changePost}
      />
    </React.StrictMode>
   );

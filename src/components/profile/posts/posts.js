@@ -13,10 +13,15 @@ function Posts(props){
 		}
 		
 	}
+
+	let changePost = () =>{
+		props.changePost(postText.current.value)
+	}
+
 	return(
 		<div className = "posts">
 			<h1 className = "postHead">My posts</h1>
-			<input ref = {postText}></input>
+			<input ref = {postText} value = {props.newPostText} onChange = {changePost} autofocus></input>
 			<button onClick = {newPost}>Post</button>
 			{props.posts.map((e)=>
 				<Post message = {e.message} id = {e.id}/>
