@@ -14,7 +14,10 @@ function App(props) {
       <Navbar friends = {props.state.navBar}/>
       <Switch>
         <Route path = "/profile" render = {() =>
-          <Profile posts = {props.state.profilePage} newPost = {props.newPost} newPostText = {props.state.profilePage.newPostText} changePost = {props.changePost}/>
+          <Profile posts = {props.state.profilePage} 
+          newPost = {props.newPost} 
+          newPostText = {props.state.profilePage.newPostText} 
+          changePost = {props.changePost}/>
         }/>
         <Route exact path = '/messages' render = {() =>
           <Messages messages = {props.state.messagePage} dialogNames = {props.state.messagePage}/>

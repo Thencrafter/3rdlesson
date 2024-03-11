@@ -7,7 +7,8 @@ function run(){
 
 let idNum = 5
 
-let state = {
+let store = {
+_state: {
     messagePage: {
         messages: [
             {message: "Hello!", name: "Alex", id: 1},
@@ -43,26 +44,32 @@ let state = {
 
         newPostText: "jkh"
     } 
-}
+},
 
-export let newPost = (postText) =>{
+
+newPost(postText){
     let addPost = {
         message: postText,
         id: idNum
     }
-    state.profilePage.posts.unshift(addPost)
-    state.profilePage.newPostText = ""
+    this._state.profilePage.posts.unshift(addPost)
+    this._state.profilePage.newPostText = ""
     idNum = idNum + 1
-    run(state)
+    this.run(this._state)
+},
+
+changePost(text){
+    this._state.profilePage.newPostText = text
+    this.run(this._state)
+},
+
+subscribe(observer){
+    this.run = observer
+},
+
+getState(){
+    return this._state
+}
 }
 
-export let changePost = (text) =>{
-    state.profilePage.newPostText = text
-    run(state)
-}
-
-export let subscribe = (observer) =>{
-    run = observer
-}
-
-export default state
+export default store
