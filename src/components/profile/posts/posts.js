@@ -1,6 +1,8 @@
 import React from 'react'
 import Pfp from '../../../img/pfp.png'
 import Post from './post.js'
+import {addPost} from '../../../data/state.js'
+import {changePost} from '../../../data/state.js'
 
 let postText = React.createRef()
 
@@ -8,14 +10,14 @@ let postText = React.createRef()
 function Posts(props){
 	function newPost() {
 		if (postText.current.value != "") {
-			props.dispatch({type: "NEW-POST"})
+			props.dispatch(addPost())
 			postText.current.value = ""
 		}
 		
 	}
 
 	let changePost = () =>{
-		props.dispatch({type: "CHANGE-POST", text: postText.current.value})
+		props.dispatch(changePost(postText.current.value))
 	}
 
 	return(

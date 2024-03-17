@@ -7,6 +7,10 @@ function run(){
 
 let idNum = 5
 
+const NEWPOST = "NEW-POST"
+
+const CHANGEPOST = "CHANGE-POST"
+
 let store = {
 _state: {
     messagePage: {
@@ -47,7 +51,7 @@ _state: {
 },
 
 dispatch(action){
-    if(action.type == "NEW-POST"){
+    if(action.type == NEWPOST){
             let addPost = {
                 message: this._state.profilePage.newPostText,
                 id: idNum
@@ -57,7 +61,7 @@ dispatch(action){
             idNum = idNum + 1
             this.run(this._state)
     }
-    else if(action.type == "CHANGE-POST"){
+    else if(action.type == CHANGEPOST){
         this._state.profilePage.newPostText = action.text
         this.run(this._state)
     }
@@ -70,6 +74,14 @@ subscribe(observer){
 getState(){
     return this._state
 }
+}
+
+export let addPost = () =>{
+    return{type: NEWPOST, id: 1}
+}
+
+export let changePost = (mtext) =>{
+    return{type: CHANGEPOST, id: 2, text: mtext}
 }
 
 export default store
