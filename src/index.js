@@ -11,8 +11,7 @@ export function run(state){
     <React.StrictMode>
       <App 
         state = {state}
-        newPost = {store.newPost}
-        changePost = {store.changePost}
+        dispatch = {store.dispatch.bind(store)}
      />
    </React.StrictMode>
   );

@@ -8,14 +8,14 @@ let postText = React.createRef()
 function Posts(props){
 	function newPost() {
 		if (postText.current.value != "") {
-			props.newPost(postText.current.value)
+			props.dispatch({type: "NEW-POST"})
 			postText.current.value = ""
 		}
 		
 	}
 
 	let changePost = () =>{
-		props.changePost(postText.current.value)
+		props.dispatch({type: "CHANGE-POST", text: postText.current.value})
 	}
 
 	return(

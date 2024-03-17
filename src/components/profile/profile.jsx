@@ -13,7 +13,8 @@ function Profile(props) {
 			<Posts posts = {props.posts.posts} 
 			newPost = {props.newPost} 
 			newPostText = {props.newPostText} 
-			changePost = {props.changePost}/>
+			changePost = {props.changePost}
+			dispatch = {props.dispatch}/>
 		</div>
 	)
 }

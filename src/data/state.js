@@ -46,21 +46,21 @@ _state: {
     } 
 },
 
-
-newPost(postText){
-    let addPost = {
-        message: postText,
-        id: idNum
+dispatch(action){
+    if(action.type == "NEW-POST"){
+            let addPost = {
+                message: this._state.profilePage.newPostText,
+                id: idNum
+            }
+            this._state.profilePage.posts.unshift(addPost)
+            this._state.profilePage.newPostText = ""
+            idNum = idNum + 1
+            this.run(this._state)
     }
-    this._state.profilePage.posts.unshift(addPost)
-    this._state.profilePage.newPostText = ""
-    idNum = idNum + 1
-    this.run(this._state)
-},
-
-changePost(text){
-    this._state.profilePage.newPostText = text
-    this.run(this._state)
+    else if(action.type == "CHANGE-POST"){
+        this._state.profilePage.newPostText = action.text
+        this.run(this._state)
+    }
 },
 
 subscribe(observer){

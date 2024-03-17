@@ -17,10 +17,13 @@ function App(props) {
           <Profile posts = {props.state.profilePage} 
           newPost = {props.newPost} 
           newPostText = {props.state.profilePage.newPostText} 
-          changePost = {props.changePost}/>
+          changePost = {props.changePost}
+          dispatch = {props.dispatch}/>
         }/>
         <Route exact path = '/messages' render = {() =>
-          <Messages messages = {props.state.messagePage} dialogNames = {props.state.messagePage}/>
+          <Messages messages = {props.state.messagePage}
+          dialogNames = {props.state.messagePage}
+          dispatch = {props.dispatch}/>
         }/>
       </Switch>
     </BrowserRouter>
