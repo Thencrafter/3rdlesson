@@ -1,8 +1,8 @@
 import React from 'react'
 import Pfp from '../../../img/pfp.png'
 import Post from './post.js'
-import {addPost} from '../../../data/state.js'
-import {changePost} from '../../../data/state.js'
+import {addPost} from '../../../data/profReducer.js'
+import {changePost} from '../../../data/profReducer.js'
 
 let postText = React.createRef()
 

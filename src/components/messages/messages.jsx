@@ -16,7 +16,11 @@ function Messages(props) {
 				</ul>
 			</div>
 			<div className = "message">
-				<Messagewall messages = {props.messages.messages}/>
+				<Messagewall messages = {props.messages.messages} 
+          newMessage = {props.newMessage} 
+          newMessageText = {props.newMessageText} 
+          changeMessage = {props.changeMessage}
+          dispatch = {props.dispatch}/>
 			</div>
 		</div>
 	)

@@ -1,15 +1,19 @@
 import Flower from '../img/flower.jpg'
 import Png from '../img/png.png'
 import Tangerine from '../img/tan.png'
+import profReducer from './profReducer.js'
+
 function run(){
     console.log('It is fake function');
 }
 
 let idNum = 5
 
-const NEWPOST = "NEW-POST"
+let idMNum = 7
 
-const CHANGEPOST = "CHANGE-POST"
+const NEWMESSAGE = "NEW-MESSAGE"
+
+const CHANGEMESSAGE = "CHANGE-MESSAGE"
 
 let store = {
 _state: {
@@ -27,7 +31,9 @@ _state: {
             {name: "Dmitriy Kozhuhov", id: 1},
             {name: "Tim Holmaskiy", id: 2},
             {name: "Joshua Coppola", id: 3}
-        ]
+        ],
+
+        newMessageText: "Hello!"
     },
     
     navBar: {
@@ -51,18 +57,20 @@ _state: {
 },
 
 dispatch(action){
-    if(action.type == NEWPOST){
-            let addPost = {
-                message: this._state.profilePage.newPostText,
-                id: idNum
+    this._state = profReducer(action, this._state)
+    this.run(this._state)
+    if(action.type == NEWMESSAGE){
+            let addMessage = {
+                message: this._state.messagePage.newMessageText,
+                id: idMNum
             }
-            this._state.profilePage.posts.unshift(addPost)
-            this._state.profilePage.newPostText = ""
+            this._state.messagePage.messages.push(addMessage)
+            this._state.messagePage.newMessageText = ""
             idNum = idNum + 1
             this.run(this._state)
     }
-    else if(action.type == CHANGEPOST){
-        this._state.profilePage.newPostText = action.text
+    else if(action.type == CHANGEMESSAGE){
+        this._state.messagePage.newMessageText = action.text
         this.run(this._state)
     }
 },
@@ -76,12 +84,12 @@ getState(){
 }
 }
 
-export let addPost = () =>{
-    return{type: NEWPOST, id: 1}
+export let addMessage = () =>{
+    return{type: NEWMESSAGE, id: 1}
 }
 
-export let changePost = (mtext) =>{
-    return{type: CHANGEPOST, id: 2, text: mtext}
+export let changeMessage = (mtext) =>{
+    return{type: CHANGEMESSAGE, id: 2, text: mtext}
 }
 
 export default store

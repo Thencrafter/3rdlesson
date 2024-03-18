@@ -22,7 +22,10 @@ function App(props) {
         }/>
         <Route exact path = '/messages' render = {() =>
           <Messages messages = {props.state.messagePage}
-          dialogNames = {props.state.messagePage}
+          dialogNames = {props.state.messagePage} 
+          newMessage = {props.newMessage} 
+          newMessageText = {props.state.messagePage.newMessageText} 
+          changeMessage = {props.changeMessage}
           dispatch = {props.dispatch}/>
         }/>
       </Switch>
