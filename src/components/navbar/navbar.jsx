@@ -9,11 +9,11 @@ function Navbar(props) {
 			<NavLink to="/profile" className = "menuItem">Profile</NavLink>
 			<NavLink to="/messages" className = "menuItem">Messages</NavLink>
 			<NavLink to="/users" className = "menuItem">Users</NavLink>
-			<div className = "friends">
+			{/*<div className = "friends">
 				{props.friends.friends.map((e)=>
 						<Friends name = {e.name} pfp = {e.pfp} id = {e.id}/>
 				)}
-			</div>
+			</div>*/}
 		</div>
 	)
 }

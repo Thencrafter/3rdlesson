@@ -2,7 +2,7 @@ import React from 'react'
 import Pfp from '../../../img/pfp.png'
 import Post from './post.js'
 import {addPost} from '../../../data/profReducer.js'
-import {changePost} from '../../../data/profReducer.js'
+import {rePost} from '../../../data/profReducer.js'
 
 let postText = React.createRef()
 
@@ -17,7 +17,7 @@ function Posts(props){
 	}
 
 	let changePost = () =>{
-		props.dispatch(changePost(postText.current.value))
+		props.dispatch(rePost(postText.current.value))
 	}
 
 	return(

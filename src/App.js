@@ -7,6 +7,7 @@ import Messages from './components/messages/messages.jsx'
 import {BrowserRouter, Route, Routes, Switch} from 'react-router-dom' 
 
 function App(props) {
+  console.log(props.state)
   return (
     <div className = "wrapper">
     <BrowserRouter>
@@ -14,7 +15,7 @@ function App(props) {
       <Navbar friends = {props.state.navBar}/>
       <Switch>
         <Route path = "/profile" render = {() =>
-          <Profile posts = {props.state.profilePage} 
+          <Profile profilePage = {props.state.profilePage} 
           newPost = {props.newPost} 
           newPostText = {props.state.profilePage.newPostText} 
           changePost = {props.changePost}
